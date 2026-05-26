@@ -7,4 +7,3 @@ export const environment = {
   giphyApiKey: 'ESKc3L6OmIAsnoiVSwa0Yu7RXKBIfnBX',
   giphyUrl: 'https://api.giphy.com/v1',
 };
-

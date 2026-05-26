@@ -1,5 +1,14 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
-import { GifListComponent } from "../../components/gif-list/gif-list.component";
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  ElementRef,
+  inject,
+  signal,
+  viewChild,
+} from '@angular/core';
+import { GifListComponent } from '../../components/gif-list/gif-list.component';
 import { GifService } from '../../services/gifs.service';
 import { ScrollStateService } from 'src/app/shared/service/scroll-state.service';
 
@@ -22,14 +31,14 @@ export default class TrendingPageComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     // después que la vista es inicializada
     const scrollDiv = this.scrollDivRef()?.nativeElement;
-    if(!scrollDiv) return;
+    if (!scrollDiv) return;
 
     scrollDiv.scrollTop = this.scrollStateService.trendingScrollState();
   }
 
-  onScroll(event: Event){
+  onScroll(event: Event) {
     const scrollDiv = this.scrollDivRef()?.nativeElement;
-    if(!scrollDiv) return;
+    if (!scrollDiv) return;
 
     const scrollTop = scrollDiv.scrollTop;
     const clientHeight = scrollDiv.clientHeight;
@@ -44,6 +53,5 @@ export default class TrendingPageComponent implements AfterViewInit {
       // cargar siguiente página de gifs
       this.gifService.loadTrendingGifs();
     }
-
   }
 }

@@ -16,7 +16,6 @@ interface MenuOption {
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuOptionsComponent {
-
   gifService = inject(GifService);
 
   menuOptions: MenuOption[] = [
@@ -24,14 +23,13 @@ export class SideMenuOptionsComponent {
       icon: 'fa-solid fa-chart-line',
       label: 'Trending',
       subLabel: 'Gifs Populares',
-      route: '/dashboard/trending'
+      route: '/dashboard/trending',
     },
     {
       icon: 'fa-solid fa-magnifying-glass',
       label: 'Buscador',
       subLabel: 'Buscar gifs',
-      route: '/dashboard/search'
-    }
+      route: '/dashboard/search',
+    },
   ];
-
 }
